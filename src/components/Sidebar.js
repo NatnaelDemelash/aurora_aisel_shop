@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { SideBarContext } from "../contexts/SidebarContext";
-
+import CartItem from "../components/CartItem";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { CartContext } from "../contexts/CartContext";
 
 const Sidebar = () => {
   const { isOpen, handleSideBarClose } = useContext(SideBarContext);
+  const { cart } = useContext(CartContext);
 
   return (
     <div
@@ -17,6 +19,13 @@ const Sidebar = () => {
         <div className="cursor-pointer w-8 h-8" onClick={handleSideBarClose}>
           <IoIosArrowRoundForward className="text-4xl" />
         </div>
+      </div>
+
+      {/* Cart Item */}
+      <div>
+        {cart.map((item) => {
+          return <CartItem item={item} key={item.id} />;
+        })}
       </div>
     </div>
   );

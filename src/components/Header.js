@@ -5,12 +5,12 @@ import { BsBag } from "react-icons/bs";
 const Header = () => {
   const { isOpen, setIsOpen } = useContext(SideBarContext);
   return (
-    <div>
+    <header className="bg-[#CCCCFF]">
       <div>Header</div>
       <div onClick={() => setIsOpen(!isOpen)} className="cursor-pointer">
         <BsBag className="text-2xl" />
       </div>
-    </div>
+    </header>
   );
 };
 
