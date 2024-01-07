@@ -3,10 +3,11 @@ import { SideBarContext } from "../contexts/SidebarContext";
 import CartItem from "../components/CartItem";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { CartContext } from "../contexts/CartContext";
+import { VscTrash } from "react-icons/vsc";
 
 const Sidebar = () => {
   const { isOpen, handleSideBarClose } = useContext(SideBarContext);
-  const { cart } = useContext(CartContext);
+  const { cart, clearCart } = useContext(CartContext);
 
   return (
     <div
@@ -26,6 +27,20 @@ const Sidebar = () => {
         {cart.map((item) => {
           return <CartItem item={item} key={item.id} />;
         })}
+      </div>
+
+      {/* totoal */}
+      <div className="flex w-full justify-between items-center py-4">
+        <div className="flex flex-col justify-start gap-2">
+          <p className="font-medium text-sm uppercase">Total Price:</p>
+          <div className="font-semibold "> $1000</div>
+        </div>
+        <div
+          onClick={() => clearCart()}
+          className="text-xl h-10 w-10 bg-red-500 flex justify-center items-center text-white cursor-pointer rounded-lg"
+        >
+          <VscTrash />
+        </div>
       </div>
     </div>
   );
