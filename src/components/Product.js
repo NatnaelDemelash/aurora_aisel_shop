@@ -20,21 +20,28 @@ const Product = ({ product }) => {
           </div>
         </div>
         {/* buttons */}
-        <div className="absolute top-0 right-0 bg-[#eae4db96] text-white p-1 flex flex-col justify-center items-center gap-y-2 opacity-0 group-hover:opacity-100">
+        <div className="absolute top-0 right-0 text-white p-1 flex flex-col justify-center items-center gap-y-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
           <button>
             <div className="flex justify-center items-center bg-[#333] text-white w-12 h-12">
               <BsPlus className="text-3xl" />
             </div>
           </button>
           <Link
-            to={"/"}
+            to={`/product/${id}`}
             className="w-12 h-12 bg-white flex justify-center items-center text-primary drop-shadow-xl"
           >
             <BsEyeFill />
           </Link>
         </div>
       </div>
-      <div>2</div>
+      {/* Category, Price, title */}
+      <div>
+        <div className="text-sm capitalize text-gray-500 mb-1">{category}</div>
+        <Link to={`/product/${id}`} className="font-semibold mb-1">
+          {title}
+        </Link>
+        <h2 className="font-semibold mt-2">${price}</h2>
+      </div>
     </div>
   );
 };
