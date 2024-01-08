@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const { isOpen, handleSideBarClose } = useContext(SideBarContext);
-  const { cart, clearCart, total } = useContext(CartContext);
+  const { cart, clearCart, total, itemAmount } = useContext(CartContext);
 
   return (
     <div
@@ -18,7 +18,9 @@ const Sidebar = () => {
       xl:max-w-[30vw] px-4 lg:px-[35px] transition-all duration-300`}
     >
       <div className="flex justify-between items-center py-6 border-b-2">
-        <div className="uppercase text-sm font-semibold">Shopping Bag(0)</div>
+        <div className="uppercase text-sm font-semibold">
+          Shopping Bag({itemAmount})
+        </div>
         <div className="cursor-pointer w-8 h-8" onClick={handleSideBarClose}>
           <IoIosArrowRoundForward className="text-4xl" />
         </div>
