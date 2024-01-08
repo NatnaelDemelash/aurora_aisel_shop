@@ -47,13 +47,13 @@ const Sidebar = () => {
       </div>
       <Link
         to={"/"}
-        className="bg-gray-200 text-primary w-full p-3 flex justify-center items-center mb-3"
+        className="bg-gray-200 text-primary font-medium w-full p-3 flex justify-center items-center mb-3"
       >
         View Cart
       </Link>
       <Link
         to={"/"}
-        className="bg-primary text-white p-3 flex justify-center items-center mb-10"
+        className="bg-primary text-white font-medium p-3 flex justify-center items-center mb-10"
       >
         Checkout
       </Link>
