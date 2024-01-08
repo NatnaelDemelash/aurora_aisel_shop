@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const Hero = () => {
-  return <div>Hero</div>;
+  return <section className="bg-hero h-[450px] bg-center bg-cover"></section>;
 };
 
 export default Hero;

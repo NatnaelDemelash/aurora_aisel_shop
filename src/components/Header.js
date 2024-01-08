@@ -26,7 +26,7 @@ const Header = () => {
         <Link to={"/"}>
           <div className="flex gap-1 items-center">
             <img src={logo} className="w-[50px]" />
-            <p className="text-sm font-semibold uppercase">Aurora_Aisel</p>
+            <p className="text-lg font-semibold uppercase">Aurora_Aisel</p>
           </div>
         </Link>
         <div
@@ -36,7 +36,7 @@ const Header = () => {
           <BsBag className="text-2xl" />
           <div
             className="bg-[#333] absolute -right-2 -bottom-2 text-[14px] h-[20px] w-[20px] rounded-full 
-          text-white flex justify-center items-center"
+          text-white  flex justify-center items-center"
           >
             {itemAmount}
           </div>

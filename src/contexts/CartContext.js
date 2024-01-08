@@ -5,6 +5,15 @@ export const CartContext = createContext();
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [itemAmount, setItemAmount] = useState(0);
+  const [total, setTotal] = useState(0);
+
+  // Total
+  useEffect(() => {
+    const total = cart.reduce((acc, currentItem) => {
+      return acc + currentItem.price * currentItem.amount;
+    }, 0);
+    setTotal(total);
+  }, [cart]);
 
   // update itemAmount
   useEffect(() => {
@@ -85,6 +94,7 @@ const CartProvider = ({ children }) => {
       value={{
         cart,
         itemAmount,
+        total,
         addToCart,
         removeFromCart,
         clearCart,
